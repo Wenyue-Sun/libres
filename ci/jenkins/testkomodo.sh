@@ -35,12 +35,12 @@ start_tests () {
     cd $CI_TEST_ROOT/python
     export ECL_SKIP_SIGNAL=ON
     pytest tests                                             \
-           --ignore="tests/res/enkf/test_analysis_config.py" \
-           --ignore="tests/res/enkf/test_res_config.py"      \
-           --ignore="tests/res/enkf/test_site_config.py"     \
-           --ignore="tests/res/enkf/test_workflow_list.py"   \
-           --ignore="tests/res/enkf/test_hook_manager.py"    \
-           --ignore="tests/legacy"
+           --ignore-glob="*/res/enkf/test_analysis_config.py" \
+           --ignore-glob="*/res/enkf/test_res_config.py"      \
+           --ignore-glob="*/res/enkf/test_site_config.py"     \
+           --ignore-glob="*/res/enkf/test_workflow_list.py"   \
+           --ignore-glob="*/res/enkf/test_hook_manager.py"    \
+           --ignore-glob="*legacy"
 }
 
 run_tests () {
